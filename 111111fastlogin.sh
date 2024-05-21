@@ -37,6 +37,6 @@ done < "$CONFIG_FILE"
 # if [ "$INTERFACE" = "wlp2s0" ] && [ "$ACTION" = "up" ]; then
     CURRENT_SSID=$(iwgetid -r)
     if [ "$CURRENT_SSID" = "$SSID" ]; then
-        curl -X POST -d "name=$LOGIN_ID&pass=$LOGIN_PASSWORD" https://gnml.tmu.ac.jp:10040/cgi-bin/adeflogin.cgi
+        curl -X POST -d "name=$LOGIN_ID" --data-urlencode "pass=$LOGIN_PASSWORD" https://gnml.tmu.ac.jp:10040/cgi-bin/adeflogin.cgi
     fi
 # fi
